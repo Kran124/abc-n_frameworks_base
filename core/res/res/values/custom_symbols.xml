@@ -81,4 +81,8 @@
   <java-symbol type="anim" name="recent_screen_fade_out" />
 
   <java-symbol type="bool" name="config_needsFingerprintAxisInversion" />
+  
+  <!-- Hardware key binding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+  
 </resources>
