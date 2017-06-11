@@ -226,7 +226,7 @@ public abstract class BaseStatusBar extends SystemUI implements
     protected boolean mDisableNotificationAlerts = false;
 
     private boolean mIsNavNotificationShowing = false;
-
+	
     protected DevicePolicyManager mDevicePolicyManager;
     protected IDreamManager mDreamManager;
     protected PowerManager mPowerManager;
@@ -358,11 +358,11 @@ public abstract class BaseStatusBar extends SystemUI implements
             boolean navbarDisabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                     Settings.Secure.NAVIGATION_BAR_VISIBLE, (hasNavbar ? 1 : 0),
                     UserHandle.USER_CURRENT) == 0;
-            /*boolean hwKeysDisabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
+            boolean hwKeysDisabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                     Settings.Secure.HARDWARE_KEYS_DISABLE, (hasNavbar ? 1 : 0),
-                    UserHandle.USER_CURRENT) != 0;*/
-            showNavigationNotification((hasNavbar && navbarDisabled && navNotificationEnabled)/* ||
-                    (!hasNavbar && hwKeysDisabled && navbarDisabled && navNotificationEnabled)*/);
+                    UserHandle.USER_CURRENT) != 0;
+            showNavigationNotification((hasNavbar && navbarDisabled && navNotificationEnabled) ||
+                    (!hasNavbar && hwKeysDisabled && navbarDisabled && navNotificationEnabled));
         }
 
         @Override
@@ -672,11 +672,11 @@ public abstract class BaseStatusBar extends SystemUI implements
                     Settings.Secure.putInt(context.getContentResolver(),
                             Settings.Secure.NAVIGATION_BAR_VISIBLE,
                             1);
-                }/* else {
+                } else {
                     Settings.Secure.putInt(context.getContentResolver(),
                             Settings.Secure.HARDWARE_KEYS_DISABLE,
                             0);
-                }*/
+                }
             }
         }
     };
@@ -839,10 +839,10 @@ public abstract class BaseStatusBar extends SystemUI implements
                 Settings.System.getUriFor(Settings.System.NO_NAVIGATION_NOTIFICATION), false,
                 mSettingsObserver,
                 UserHandle.USER_ALL);
-        /*mContext.getContentResolver().registerContentObserver(
+        mContext.getContentResolver().registerContentObserver(
                 Settings.Secure.getUriFor(Settings.Secure.HARDWARE_KEYS_DISABLE), false,
                 mSettingsObserver,
-                UserHandle.USER_ALL);*/
+                UserHandle.USER_ALL);
 
         mBarService = IStatusBarService.Stub.asInterface(
                 ServiceManager.getService(Context.STATUS_BAR_SERVICE));
