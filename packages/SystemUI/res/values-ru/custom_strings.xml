@@ -50,14 +50,14 @@
     <string name="quick_settings_high_brightness">Высокая яркость</string>
 
     <!-- Reboot/Recovery QS Tile -->
-    <string name="quick_settings_reboot_label">Перезагрузить</string>
-    <string name="quick_settings_reboot_recovery_label">Рекавери</string>
+    <string name="quick_settings_reboot_label">Перезагрузка</string>
+    <string name="quick_settings_reboot_recovery_label">В рекавери</string>
 
      <!-- Sound QS Tile -->
      <string name="quick_settings_sound_label">Звук</string>
      <string name="quick_settings_sound_ring">Все звуки</string>
-     <string name="quick_settings_sound_vibrate">Вибрировать</string>
-     <string name="quick_settings_sound_dnd">Не беспокоить</string>
+     <string name="quick_settings_sound_vibrate">Вибрация</string>
+     <string name="quick_settings_sound_dnd">Без звука</string>
 
      <!-- Volume QS Tile -->
      <string name="accessibility_quick_settings_volume_panel">Панель громкости</string>
@@ -79,7 +79,7 @@
     <string name="quick_settings_fling">Fling</string>
 
     <!-- Ambient display and lift gesture Tile -->
-    <string name="quick_settings_doze_notifications_label">Уведомления Doze</string>
+    <string name="quick_settings_doze_notifications_label">Ambient Display</string>
 
     <!-- Advance location quick setting tile -->
     <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: по координатам сети.</string>
